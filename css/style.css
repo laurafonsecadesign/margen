@@ -664,13 +664,14 @@ em {
   font-weight: 400;
 }
 
-/* La palabra «Fuera» mantiene su tamaño especial, ahora en Switzer Regular. */
+/* «Fuera» utiliza ITC Legacy Sans Std Medium Italic.
+   Hace falta el archivo de la fuente para verla correctamente en otros dispositivos. */
 .manifiesto h2 em,
 .cabecera-seccion h1 em {
-  font-family: 'Switzer', Arial, sans-serif;
+  font-family: 'ITC Legacy Sans Std', 'ITC Legacy Sans', 'Switzer', Arial, sans-serif;
   font-size: 133px;
-  font-weight: 400;
-  font-style: normal;
+  font-weight: 500;
+  font-style: italic;
   letter-spacing: -.05em;
   line-height: .9;
 }
