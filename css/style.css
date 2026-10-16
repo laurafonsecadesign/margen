@@ -808,6 +808,12 @@ em {
   text-transform: uppercase;
 }
 
+/* Evitamos sumar dos espacios grandes después de imágenes y citas. */
+.lectura-articulo > .imagen-lectura + section,
+.lectura-articulo > blockquote + section {
+  margin-top: 0;
+}
+
 .lectura-articulo > .cierre-editorial {
   margin-top: 74px;
   padding-top: 35px;
