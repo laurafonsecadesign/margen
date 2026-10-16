@@ -806,6 +806,7 @@ em {
   font-size: 11px;
   line-height: 1.5;
   text-transform: uppercase;
+  flex-wrap: wrap;
 }
 
 /* Evitamos sumar dos espacios grandes después de imágenes y citas. */
