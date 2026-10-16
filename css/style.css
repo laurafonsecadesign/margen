@@ -674,6 +674,7 @@ em {
   font-style: italic;
   letter-spacing: -.05em;
   line-height: .9;
+  text-transform: none;
 }
 
 .entradilla {
