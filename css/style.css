@@ -466,8 +466,10 @@ img[src$='objetos.jpg'] {
   transform: translateX(12px);
 }
 
+/* Frase en una sola línea que se repite sin interrupciones. */
 .cita {
-  padding: 56px;
+  overflow: hidden;
+  padding: 35px 0;
   background: var(--granate);
   color: var(--rojo);
   font-size: clamp(30px, 3.4vw, 60px);
@@ -475,8 +477,22 @@ img[src$='objetos.jpg'] {
   text-transform: uppercase;
 }
 
-.cita p {
-  max-width: 1250px;
+.cita-pista {
+  display: flex;
+  width: max-content;
+  animation: deslizar-frase 25s linear infinite;
+}
+
+.cita-texto {
+  flex-shrink: 0;
+  padding-right: 1em;
+  white-space: nowrap;
+}
+
+@keyframes deslizar-frase {
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .siguientes h2 {
@@ -1029,7 +1045,7 @@ em {
   }
 
   .cita {
-    padding: 36px var(--margen);
+    padding: 25px 0;
     font-size: 34px;
   }
 
