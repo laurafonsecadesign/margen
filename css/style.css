@@ -225,6 +225,33 @@ h1.etiqueta, h2.etiqueta, h3.etiqueta {
   transform: scaleX(1);
 }
 
+/* Iconos SVG: mismo dibujo en todos los sistemas y navegadores. */
+.icono {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  vertical-align: -.12em;
+}
+
+.boton, .enlace {
+  gap: 6px;
+}
+
+.flecha .icono {
+  vertical-align: middle;
+}
+
+.cita .icono {
+  width: .8em;
+  height: .8em;
+  vertical-align: -.04em;
+}
+
+.menu-cerrar .icono {
+  vertical-align: -.12em;
+}
+
 /* El menú desplegable solo aparece en pantallas pequeñas. */
 .menu-movil, .menu-boton, .menu-toggle {
   display: none;
