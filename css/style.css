@@ -541,7 +541,7 @@ em {
 }
 
 .cabecera-articulo {
-  padding-block: 42px 54px;
+  padding-block: 50px 64px;
 }
 
 .volver {
@@ -549,15 +549,18 @@ em {
 }
 
 .cabecera-articulo h1 {
-  max-width: 1250px;
-  margin-block: 32px;
+  max-width: 1120px;
+  margin-block: 38px 32px;
   color: var(--granate);
-  font-size: clamp(58px, 7.8vw, 125px);
+  font-size: clamp(56px, 7vw, 112px);
+  line-height: .92;
 }
 
 .cabecera-articulo .entradilla {
-  max-width: 850px;
+  max-width: 720px;
   margin-bottom: 36px;
+  font-size: clamp(21px, 2.1vw, 29px);
+  line-height: 1.25;
 }
 
 .imagen-articulo {
@@ -571,42 +574,100 @@ em {
 }
 
 .imagen-articulo figcaption {
-  padding-block: 16px;
-  font-size: 14px;
+  padding-block: 14px;
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--texto-suave);
 }
 
+/* Maquetación editorial: columna de lectura y fotografías que abren el ritmo. */
 .lectura {
-  max-width: 720px;
-  margin: 64px auto 90px;
-  padding-inline: 20px;
-  font-size: 22px;
+  max-width: 1100px;
+  margin: 76px auto 108px;
+  padding-inline: var(--margen);
+  font-size: 17px;
+  line-height: 1.58;
+  letter-spacing: 0;
+  color: var(--texto-suave);
+}
+
+.lectura > p, .lectura > section, .lectura > blockquote {
+  max-width: 680px;
+  margin-inline: auto;
 }
 
 .lectura .introduccion {
-  font-size: 32px;
-  margin-bottom: 48px;
+  margin-bottom: 50px;
+  font-size: clamp(21px, 2vw, 25px);
+  line-height: 1.35;
+  color: var(--tinta);
 }
 
 .lectura h2 {
-  margin-bottom: 28px;
-  font-size: 42px;
+  margin-bottom: 22px;
+  font-size: clamp(27px, 3vw, 34px);
+  line-height: 1.09;
+  letter-spacing: -.015em;
+  color: var(--tinta);
 }
 
 .lectura p {
-  margin-bottom: 26px;
+  margin-bottom: 23px;
 }
 
 .lectura section + section {
-  margin-top: 48px;
+  margin-top: 60px;
 }
 
 .lectura blockquote {
-  border-left: 5px solid var(--rojo);
-  margin-block: 44px;
-  padding: 8px 0 8px 26px;
+  max-width: 740px;
+  margin-block: 54px;
+  padding: 12px 0 12px 28px;
+  border-left: 3px solid var(--rojo);
   color: var(--granate);
-  font-size: 40px;
+  font-size: clamp(24px, 3.2vw, 35px);
+  line-height: 1.13;
   font-weight: 400;
+}
+
+/* Cada estudio visual queda integrado entre los bloques de texto. */
+.lectura .imagen-lectura {
+  width: 100%;
+  max-width: 960px;
+  margin: 54px auto 65px;
+}
+
+.lectura .imagen-lectura img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #e4ded4;
+}
+
+.lectura .imagen-lectura figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 12px;
+  padding-top: 11px;
+  border-top: 1px solid var(--linea);
+  color: var(--texto-suave);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.lectura .imagen-lectura--detalle {
+  max-width: 700px;
+}
+
+.lectura .imagen-lectura + section {
+  margin-top: 0;
+}
+
+.lectura .cierre-editorial {
+  padding-top: 44px;
+  border-top: 1px solid var(--linea);
+  margin-top: 66px;
 }
 
 .relacionados {
@@ -866,20 +927,29 @@ em {
   }
 
   .lectura {
-    margin-block: 40px 65px;
-    font-size: 21px;
+    margin-block: 42px 72px;
+    font-size: 16px;
+    line-height: 1.58;
   }
 
   .lectura .introduccion {
-    font-size: 28px;
+    font-size: 21px;
   }
 
   .lectura h2 {
-    font-size: 36px;
+    font-size: 27px;
   }
 
   .lectura blockquote {
-    font-size: 34px;
+    font-size: 26px;
+  }
+
+  .lectura .imagen-lectura {
+    margin-block: 38px 46px;
+  }
+
+  .lectura .imagen-lectura figcaption {
+    font-size: 11px;
   }
 
   .sobre-grid {
