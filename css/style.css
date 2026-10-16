@@ -461,10 +461,13 @@ img[src$='objetos.jpg'] {
   transition: transform .25s ease;
 }
 
+/* El rojo del hover llega hasta los bordes, sin mover el contenido. */
 .fila-categoria:hover {
   padding-left: 12px;
   background: var(--rojo);
   color: var(--granate);
+  box-shadow: var(--margen) 0 0 var(--rojo),
+              calc(-1 * var(--margen)) 0 0 var(--rojo);
 }
 
 .fila-categoria:hover .flecha {
