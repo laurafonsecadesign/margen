@@ -49,6 +49,7 @@
   --tinta: #292423;
   --linea: #a9a19a;
   --margen: 40px;
+  --alto-menu: 102px;
 }
 
 * {
@@ -57,6 +58,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--alto-menu) + 16px);
 }
 
 body {
@@ -66,7 +68,7 @@ body {
   font-family: 'Switzer', Arial, sans-serif;
   font-size: 18px;
   line-height: 0.9;
-  letter-spacing: -0.05em;
+  letter-spacing: 0;
 }
 
 h1, h2, h3, p, figure, blockquote {
@@ -115,7 +117,7 @@ img {
   background: var(--granate);
   color: white;
   transform: translateY(-180%);
-  z-index: 10;
+  z-index: 200;
 }
 
 .saltar:focus {
@@ -148,6 +150,7 @@ img {
   color: var(--granate);
   font-size: 14px;
   font-weight: 600;
+  letter-spacing: 0;
   text-align: center;
   transition: background-color 220ms ease, color 220ms ease, transform 220ms ease;
 }
@@ -158,20 +161,33 @@ img {
   transform: translateY(-2px);
 }
 
-nav a:hover, .tarjeta h3 a:hover {
+nav a:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
 /* 2. NAVEGACIÓN Y PIE */
 .cabecera {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 100;
+  transform: translateX(-50%);
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 32px;
-  padding: 40px var(--margen);
+  width: 100%;
+  max-width: 1800px;
+  height: var(--alto-menu);
+  padding: 0 var(--margen);
   background: var(--rojo);
   color: var(--granate);
+}
+
+/* En las páginas interiores, el encabezado fijo no tapa el contenido. */
+body > .cabecera + main {
+  padding-top: var(--alto-menu);
 }
 
 .marca {
@@ -319,7 +335,7 @@ nav a[aria-current='page'] {
   min-width: 0;
   padding: 18px;
   border-radius: 20px;
-  transition: background-color 250ms ease, transform 250ms ease;
+  transition: background-color 250ms ease;
 }
 
 .imagen-tarjeta {
@@ -337,16 +353,10 @@ nav a[aria-current='page'] {
   object-fit: cover;
 }
 
-/* Ahora se colorea toda la tarjeta, en vez de ampliar la imagen. */
+/* Solo cambia el fondo de la tarjeta: los textos no se desplazan ni se animan. */
 @media (hover: hover) {
   .tarjeta:hover {
     background: var(--rojo);
-    transform: translateY(-4px);
-  }
-
-  .tarjeta:hover .enlace {
-    background: var(--granate);
-    color: var(--papel);
   }
 }
 
@@ -354,9 +364,9 @@ nav a[aria-current='page'] {
   background: var(--rojo);
 }
 
-.tarjeta:focus-within .enlace {
-  background: var(--granate);
-  color: var(--papel);
+/* Los botones mantienen su estado hover, pero sin mover el texto. */
+.tarjeta .enlace:hover {
+  transform: none;
 }
 
 /* El bodegón es vertical: desplazamos el recorte hacia los objetos. */
@@ -699,12 +709,22 @@ em {
 @media (max-width: 700px) {
   :root {
     --margen: 20px;
+    --alto-menu: 128px;
   }
 
   .cabecera {
     flex-direction: column;
-    gap: 26px;
-    padding-block: 26px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .cabecera nav {
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 6px;
+    font-size: clamp(11px, 3.2vw, 15px);
   }
 
   nav {
@@ -876,7 +896,7 @@ em {
     transition: none !important;
   }
 
-  .tarjeta:hover, .boton:hover, .enlace:hover {
+  .boton:hover, .enlace:hover {
     transform: none;
   }
 }
