@@ -256,16 +256,6 @@ nav a[aria-current='page'] {
   color: var(--granate);
 }
 
-.pie-cabecera {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  padding-top: 15px;
-  padding-bottom: 52px;
-  border-top: 1px solid var(--granate);
-  font-size: 13px;
-}
-
 .pie .rotulo img {
   width: 100%;
 }
@@ -1607,12 +1597,6 @@ em {
     font-size: 24px;
   }
 
-  .pie-cabecera {
-    flex-direction: column;
-    gap: 8px;
-    padding-bottom: 40px;
-    font-size: 11px;
-  }
 }
 
 /* 6. ANIMACIONES CSS
