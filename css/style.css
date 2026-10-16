@@ -1448,6 +1448,192 @@ em {
 }
 
 
+/* AJUSTES EDITORIALES PARA PANTALLAS PEQUEÑAS */
+@media (max-width: 1000px) {
+  .descripcion-seccion {
+    flex-wrap: wrap;
+  }
+
+  .descripcion-seccion .etiqueta {
+    text-align: left;
+  }
+
+  .manifiesto {
+    column-gap: 30px;
+  }
+}
+
+@media (max-width: 700px) {
+  .portada-interior {
+    gap: 22px;
+    padding: calc(var(--alto-menu) + 23px) var(--margen) 28px;
+  }
+
+  .portada-meta {
+    flex-wrap: wrap;
+    gap: 6px 15px;
+    font-size: 10px;
+  }
+
+  .claim {
+    max-width: 390px;
+    font-size: clamp(33px, 8.8vw, 52px);
+  }
+
+  .destacado {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 58px 0 70px;
+  }
+
+  .texto-destacado {
+    padding: 20px var(--margen) 45px;
+    border-top: 0;
+  }
+
+  .texto-destacado h2 {
+    max-width: 100%;
+    margin-top: 26px;
+    font-size: clamp(43px, 11vw, 65px);
+  }
+
+  .imagen-destacada {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1.18;
+  }
+
+  .explora {
+    padding-block: 65px 72px;
+  }
+
+  .explora h2 {
+    margin-bottom: 35px;
+  }
+
+  .manifiesto {
+    display: block;
+    padding: 75px var(--margen) 90px;
+  }
+
+  .manifiesto > .etiqueta {
+    margin-bottom: 65px;
+  }
+
+  .manifiesto h2 {
+    max-width: 100%;
+    margin: 0;
+    font-size: clamp(59px, 12vw, 86px);
+    line-height: .95;
+  }
+
+  .manifiesto .entradilla {
+    margin: 40px 0 30px;
+    font-size: 22px;
+  }
+
+  .cabecera-seccion {
+    display: block;
+    padding-top: 68px;
+    padding-bottom: 75px;
+  }
+
+  .cabecera-seccion > .etiqueta {
+    margin-bottom: 44px;
+  }
+
+  .cabecera-seccion h1 {
+    margin: 0 0 42px;
+    font-size: clamp(65px, 16vw, 110px);
+    line-height: .92;
+  }
+
+  .descripcion-seccion {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+    margin-top: 0;
+    padding-top: 24px;
+  }
+
+  .descripcion-seccion > p {
+    font-size: clamp(25px, 7vw, 35px);
+  }
+
+  .archivo {
+    padding-block: 66px 85px;
+  }
+
+  .sobre-grid {
+    display: block;
+    padding-block: 74px;
+  }
+
+  .sobre-grid > .etiqueta {
+    margin-bottom: 25px;
+  }
+
+  .sobre-grid > div {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .sobre-grid h2 {
+    margin-bottom: 32px;
+    font-size: clamp(44px, 11vw, 66px);
+  }
+
+  .sobre-grid p:not(.etiqueta) {
+    font-size: 19px;
+  }
+
+  .principios {
+    padding-block: 76px 90px;
+  }
+
+  .principios h2 {
+    margin-bottom: 50px;
+    font-size: 54px;
+  }
+
+  .principios .rejilla {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  .principios .numero {
+    margin-bottom: 42px;
+    font-size: 40px;
+  }
+
+  .principios h3 {
+    font-size: 29px;
+  }
+
+  .principios article > p:last-child {
+    font-size: 16px;
+  }
+
+  .creditos > section {
+    display: block;
+    padding-block: 30px;
+  }
+
+  .creditos h2 {
+    margin-bottom: 22px;
+    font-size: 24px;
+  }
+
+  .pie-cabecera {
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 40px;
+    font-size: 11px;
+  }
+}
+
 /* 6. ANIMACIONES CSS
    Efectos sencillos para dar movimiento sin usar JavaScript. */
 
