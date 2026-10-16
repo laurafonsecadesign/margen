@@ -135,36 +135,32 @@ img {
   color: var(--granate);
 }
 
-.enlace {
-  display: inline-block;
-  width: fit-content;
-  padding-block: 12px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--granate);
-}
-
-.enlace:hover, nav a:hover, .tarjeta h3 a:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-.boton {
+/* Un mismo estilo para todos los botones de la revista. */
+.boton, .enlace {
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  width: fit-content;
   min-height: 48px;
-  padding: 16px;
+  padding: 14px 22px;
+  border-radius: 999px;
   background: var(--rojo);
   color: var(--granate);
   font-size: 14px;
   font-weight: 600;
-  transition: background 180ms, color 180ms;
+  text-align: center;
+  transition: background-color 220ms ease, color 220ms ease, transform 220ms ease;
 }
 
-.boton:hover {
+.boton:hover, .enlace:hover {
   background: var(--granate);
-  color: var(--rojo);
+  color: var(--papel);
+  transform: translateY(-2px);
+}
+
+nav a:hover, .tarjeta h3 a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 /* 2. NAVEGACIÓN Y PIE */
@@ -237,7 +233,8 @@ nav a[aria-current='page'] {
 .portada {
   display: flex;
   flex-direction: column;
-  min-height: 804px;
+  min-height: 100vh;
+  min-height: 100svh;
   background: var(--rojo);
   color: var(--granate);
 }
@@ -320,6 +317,9 @@ nav a[aria-current='page'] {
   align-items: flex-start;
   gap: 12px;
   min-width: 0;
+  padding: 18px;
+  border-radius: 20px;
+  transition: background-color 250ms ease, transform 250ms ease;
 }
 
 .imagen-tarjeta {
@@ -327,6 +327,7 @@ nav a[aria-current='page'] {
   width: 100%;
   aspect-ratio: 425 / 260;
   overflow: hidden;
+  border-radius: 12px;
   background: var(--linea);
 }
 
@@ -334,11 +335,28 @@ nav a[aria-current='page'] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 300ms ease;
 }
 
-.imagen-tarjeta:hover img {
-  transform: scale(1.025);
+/* Ahora se colorea toda la tarjeta, en vez de ampliar la imagen. */
+@media (hover: hover) {
+  .tarjeta:hover {
+    background: var(--rojo);
+    transform: translateY(-4px);
+  }
+
+  .tarjeta:hover .enlace {
+    background: var(--granate);
+    color: var(--papel);
+  }
+}
+
+.tarjeta:focus-within {
+  background: var(--rojo);
+}
+
+.tarjeta:focus-within .enlace {
+  background: var(--granate);
+  color: var(--papel);
 }
 
 /* El bodegón es vertical: desplazamos el recorte hacia los objetos. */
@@ -434,8 +452,18 @@ img[src$='objetos.jpg'] {
   color: var(--rojo);
 }
 
-.manifiesto .etiqueta, .manifiesto .enlace, .manifiesto h2 {
+.manifiesto .etiqueta, .manifiesto h2 {
   color: inherit;
+}
+
+.manifiesto .enlace {
+  background: var(--rojo);
+  color: var(--granate);
+}
+
+.manifiesto .enlace:hover {
+  background: var(--papel);
+  color: var(--granate);
 }
 
 .manifiesto h2 {
@@ -637,10 +665,6 @@ em {
     --margen: 28px;
   }
 
-  .portada {
-    min-height: 680px;
-  }
-
   .destacado {
     grid-template-columns: 1fr 1fr;
     gap: 28px;
@@ -691,11 +715,6 @@ em {
 
   nav a {
     padding-block: 10px;
-  }
-
-  .portada {
-    min-height: 620px;
-    min-height: 85svh;
   }
 
   .portada-interior {
@@ -855,5 +874,9 @@ em {
 
   * {
     transition: none !important;
+  }
+
+  .tarjeta:hover, .boton:hover, .enlace:hover {
+    transform: none;
   }
 }
