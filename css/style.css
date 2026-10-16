@@ -90,12 +90,13 @@ h1, h2, h3 {
   line-height: .98;
 }
 
-/* Textos de lectura, pies y notas: Switzer Light, minúsculas y tracking 0. */
+/* Textos de lectura, pies y notas: Switzer Light y tracking 0.
+   Respetamos las mayúsculas iniciales y los nombres propios del HTML. */
 p, li, figcaption, blockquote {
   font-family: 'Switzer', Arial, sans-serif;
   font-weight: 300;
   letter-spacing: 0;
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 h2 {
@@ -156,7 +157,7 @@ img {
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 0;
-  text-transform: lowercase;
+  text-transform: none;
   color: var(--texto-suave);
 }
 
@@ -995,7 +996,7 @@ em {
   color: var(--texto-suave);
   font-size: 11px;
   line-height: 1.5;
-  text-transform: lowercase;
+  text-transform: none;
   letter-spacing: 0;
   flex-wrap: wrap;
 }
