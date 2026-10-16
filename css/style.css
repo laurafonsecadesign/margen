@@ -163,16 +163,40 @@ img {
   letter-spacing: 0;
   line-height: 1.4;
   text-align: left;
+  transition: color .25s ease, transform .25s ease;
 }
 
-.boton:hover, .enlace:hover {
-  background: transparent;
-  color: var(--granate);
+/* Al pasar el ratón, los enlaces se desplazan ligeramente y se subrayan. */
+@media (hover: hover) {
+  .boton:hover, .enlace:hover {
+    color: var(--tinta);
+    transform: translateX(5px);
+  }
+}
+
+.boton:focus-visible, .enlace:focus-visible {
+  color: var(--tinta);
+  transform: translateX(5px);
 }
 
 /* Subrayado animado compartido por el menú y todos los botones. */
 .cabecera nav a, .pie nav a, .boton, .enlace {
   position: relative;
+}
+
+/* En la cabecera y el pie, el texto cambia a color papel en hover. */
+.cabecera nav a, .pie nav a {
+  transition: color .25s ease;
+}
+
+@media (hover: hover) {
+  .cabecera > nav a:hover, .pie nav a:hover {
+    color: var(--papel);
+  }
+}
+
+.cabecera > nav a:focus-visible, .pie nav a:focus-visible {
+  color: var(--papel);
 }
 
 .cabecera nav a::after, .pie nav a::after,
@@ -471,9 +495,11 @@ img[src$='objetos.jpg'] {
   font-size: 13px;
 }
 
-.tarjeta .enlace:hover {
-  background: transparent;
-  color: var(--granate);
+/* Las tarjetas conservan el texto quieto: solo cambia color y subrayado. */
+.tarjeta .enlace:hover,
+.tarjeta .enlace:focus-visible {
+  color: var(--tinta);
+  transform: none;
 }
 
 .ultimas .tarjeta:first-child h3 {
@@ -607,9 +633,9 @@ img[src$='objetos.jpg'] {
   color: var(--rojo);
 }
 
-.manifiesto .enlace:hover {
-  background: transparent;
-  color: var(--rojo);
+.manifiesto .enlace:hover,
+.manifiesto .enlace:focus-visible {
+  color: var(--papel);
 }
 
 .manifiesto h2 {
@@ -739,7 +765,7 @@ em {
 }
 
 .cabecera-articulo .volver:hover {
-  color: var(--granate);
+  color: var(--tinta);
 }
 
 .cabecera-articulo > .etiqueta:first-of-type {
