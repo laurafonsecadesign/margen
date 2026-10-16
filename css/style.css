@@ -624,11 +624,7 @@ img[src$='objetos.jpg'] {
 }
 
 .manifiesto .etiqueta, .manifiesto h2 {
-  max-width: 960px;
-  margin: 0;
-  font-size: clamp(65px, 7.1vw, 125px);
-  line-height: .93;
-  letter-spacing: -.04em;
+  color: inherit;
 }
 
 .manifiesto .enlace {
@@ -645,8 +641,11 @@ img[src$='objetos.jpg'] {
 }
 
 .manifiesto h2 {
-  margin-top: 96px;
-  font-size: clamp(58px, 7.64vw, 125px);
+  max-width: 960px;
+  margin: 0;
+  font-size: clamp(65px, 7.1vw, 125px);
+  line-height: .93;
+  letter-spacing: -.04em;
 }
 
 em {
