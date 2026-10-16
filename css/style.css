@@ -45,6 +45,16 @@
   font-display: swap;
 }
 
+/* Alternativa itálica local para «Fuera»: Safari no tiene que inventar
+   una cursiva de peso 500 si ITC Legacy no está instalada. */
+@font-face {
+  font-family: 'Margen Fuera Fallback';
+  src: url('../assets/fonts/Switzer-400Italic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --rojo: #fd3738;
   --granate: #570000;
@@ -692,16 +702,21 @@ em {
   font-weight: 400;
 }
 
-/* «Fuera» utiliza ITC Legacy Sans Std Medium Italic.
-   Hace falta el archivo de la fuente para verla correctamente en otros dispositivos. */
+/* La fuente ITC Legacy Sans Std Medium Italic se mantiene como primera
+   opción. Si no está instalada, usamos una cursiva LOCAL y explícita
+   para evitar las sustituciones inconsistentes de Safari. */
 .manifiesto h2 em {
-  font-family: 'ITC Legacy Sans Std', 'ITC Legacy Sans', 'Switzer', Arial, sans-serif;
+  display: inline-block;
+  font-family: 'ITC Legacy Sans Std', 'ITC Legacy Sans',
+    'Margen Fuera Fallback', 'Switzer', sans-serif;
   font-size: 133px;
   font-weight: 500;
   font-style: italic;
+  font-synthesis: none;
   letter-spacing: -.05em;
   line-height: .9;
   text-transform: none;
+  white-space: nowrap;
 }
 
 .entradilla {
