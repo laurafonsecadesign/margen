@@ -168,9 +168,28 @@ img {
   transform: translateY(-2px);
 }
 
-nav a:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+/* Subrayado que aparece suavemente al pasar el ratón. */
+.cabecera nav a, .pie nav a {
+  position: relative;
+}
+
+.cabecera nav a::after, .pie nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s ease;
+}
+
+.cabecera nav a:hover::after, .pie nav a:hover::after,
+.cabecera nav a:focus-visible::after, .pie nav a:focus-visible::after,
+.cabecera nav a[aria-current='page']::after {
+  transform: scaleX(1);
 }
 
 /* 2. NAVEGACIÓN Y PIE */
@@ -215,8 +234,7 @@ nav a {
 }
 
 nav a[aria-current='page'] {
-  text-decoration: underline;
-  text-underline-offset: 5px;
+  text-decoration: none;
 }
 
 .rotulo {
@@ -317,6 +335,11 @@ nav a[aria-current='page'] {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform .65s ease;
+}
+
+.imagen-destacada:hover img {
+  transform: scale(1.035);
 }
 
 .ultimas h2 {
@@ -419,7 +442,7 @@ img[src$='objetos.jpg'] {
   padding-block: 28px;
   border-top: 1px solid var(--linea);
   color: var(--granate);
-  transition: color 180ms, padding 180ms;
+  transition: color .25s ease, padding .25s ease, background-color .25s ease;
 }
 
 .fila-categoria .etiqueta {
@@ -435,11 +458,17 @@ img[src$='objetos.jpg'] {
 .flecha {
   font-size: 38px;
   text-align: right;
+  transition: transform .25s ease;
 }
 
 .fila-categoria:hover {
   padding-left: 12px;
-  color: #850000;
+  background: var(--rojo);
+  color: var(--granate);
+}
+
+.fila-categoria:hover .flecha {
+  transform: translate(5px, -5px);
 }
 
 .cita {
@@ -966,6 +995,49 @@ em {
   }
 }
 
+
+/* 6. ANIMACIONES CSS
+   Efectos sencillos para dar movimiento sin usar JavaScript. */
+
+/* El texto y el rótulo de portada entran al cargar la página. */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.portada .claim {
+  animation: aparecer .7s ease-out both;
+}
+
+.portada .rotulo {
+  animation: aparecer .9s ease-out .15s both;
+}
+
+/* Lo mismo para los títulos de las páginas interiores. */
+.cabecera-seccion h1, .cabecera-articulo h1 {
+  animation: aparecer .8s ease-out both;
+}
+
+/* Animación al entrar en pantalla: funciona en navegadores compatibles.
+   En los demás los elementos aparecen normalmente. */
+@supports (animation-timeline: view()) {
+  .destacado .texto-destacado,
+  .destacado .imagen-destacada,
+  .bloque > h2:not(.etiqueta):not(.rotulo),
+  .rejilla > .tarjeta,
+  .lectura .imagen-lectura {
+    animation: aparecer linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 85%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -973,6 +1045,7 @@ em {
 
   * {
     transition: none !important;
+    animation: none !important;
   }
 
   .boton:hover, .enlace:hover {
