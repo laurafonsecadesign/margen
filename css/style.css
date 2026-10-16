@@ -1333,6 +1333,11 @@ em {
     gap: 20px;
   }
 
+  /* En móvil el pie conserva el logo y el copyright, sin repetir el menú. */
+  .pie nav {
+    display: none;
+  }
+
   .cabecera-seccion h1 {
     margin-block: 48px 40px;
     font-size: clamp(76px, 19vw, 130px);
