@@ -667,8 +667,7 @@ em {
 
 /* «Fuera» utiliza ITC Legacy Sans Std Medium Italic.
    Hace falta el archivo de la fuente para verla correctamente en otros dispositivos. */
-.manifiesto h2 em,
-.cabecera-seccion h1 em {
+.manifiesto h2 em {
   font-family: 'ITC Legacy Sans Std', 'ITC Legacy Sans', 'Switzer', Arial, sans-serif;
   font-size: 133px;
   font-weight: 500;
@@ -1321,8 +1320,7 @@ em {
     margin-top: 70px;
   }
 
-  .manifiesto h2 em,
-  .cabecera-seccion h1 em {
+  .manifiesto h2 em {
     font-size: clamp(64px, 16vw, 100px);
   }
 
