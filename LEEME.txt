@@ -1,0 +1,62 @@
+MARGEN. — REVISTA DIGITAL
+Proyecto académico de HTML y CSS
+
+CÓMO ABRIR LA WEB
+1. Descomprime toda la carpeta.
+2. Abre index.html en Chrome, Safari, Firefox o Edge.
+3. No hace falta instalar nada. Las imágenes y las fuentes son locales.
+
+CÓMO ESTÁ ORGANIZADA
+- index.html: home basada en el diseño de Figma.
+- diseno.html, arte.html y cultura.html: categorías.
+- about.html: información y manifiesto de la revista.
+- creditos.html: fuentes de imágenes, tipografía y recursos.
+- Los otros siete HTML: artículos completos.
+- css/style.css: todos los estilos, ordenados y comentados por secciones.
+- assets/images/: fotografías y gráficos de la revista.
+- assets/fonts/: Switzer y su licencia original FFL.txt.
+- docs/Decisiones_de_diseno.pdf: documento para acompañar la entrega.
+- docs/Decisiones_de_diseno.md: el mismo contenido en texto editable.
+
+CAMBIOS SENCILLOS
+Para modificar un texto, abre su HTML en VS Code y busca la frase.
+Para cambiar una foto, reemplaza el archivo correspondiente en assets/images/
+y actualiza su descripción alt si cambia el contenido de la imagen.
+Para cambiar los colores, ve a :root al principio de css/style.css.
+Para cambiar un margen, busca --margen en la misma hoja de estilos.
+Para cambiar la tipografía, busca los bloques @font-face y la regla body.
+Para modificar la versión móvil, ve al bloque @media (max-width: 700px).
+
+POR QUÉ NO HAY SCRIPT.JS
+La web funciona con HTML y CSS. Los botones de lectura son enlaces reales.
+La navegación móvil permanece visible. No necesita un menú programado,
+una instalación, una base de datos ni herramientas de compilación.
+
+QUÉ CÓDIGO CONVIENE ENTENDER
+HTML organiza los contenidos. CSS controla su aspecto.
+Grid distribuye las columnas; Flexbox alinea y reparte elementos.
+Las media queries cambian la distribución según el ancho de la pantalla.
+Las rutas son relativas, para poder mover la carpeta sin romper los enlaces.
+Los bloques comunes de cabecera y pie se repiten en los HTML a propósito:
+es una web estática pequeña y se pueden editar sin aprender plantillas.
+
+TIPOGRAFÍA
+Switzer está configurada con line-height: 0.9 y letter-spacing: -0.05em.
+El 90% y el -5% se han aplicado al texto HTML según la indicación del diseño.
+Los rótulos vectoriales MARGEN y EXPLORA conservan su dibujo original.
+Las ilustraciones tipográficas son imágenes y tienen su propia composición.
+La fuente se incluye para su uso en esta web; consulta assets/fonts/FFL.txt.
+
+COMPROBACIÓN REALIZADA
+Se han comprobado las 13 páginas, sus 354 referencias locales, los destinos
+con ancla, las imágenes, los recursos del CSS y los caracteres españoles de
+Switzer. Todas las páginas tienen un H1, idioma es y textos alternativos.
+La revisión visual en un navegador no estaba disponible en el entorno de
+preparación. Antes de entregar, abre la web y comprueba escritorio y móvil.
+
+PRUEBA FINAL QUE PUEDES HACER
+- Abre index.html y entra en cada categoría y artículo.
+- Reduce el ancho de la ventana y comprueba que no se corta ningún texto.
+- Recorre los enlaces con Tab: el foco debe verse.
+- Usa los enlaces «Volver» y «Arriba».
+- Revisa los textos y adapta lo que quieras a tu propia voz.
