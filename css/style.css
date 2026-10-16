@@ -1642,6 +1642,7 @@ em {
     margin: 0;
     overflow-y: auto;
     background: var(--rojo);
+    animation: abrir-menu .3s ease-out;
   }
 
   .menu-movil[open] summary {
@@ -1680,6 +1681,32 @@ em {
     letter-spacing: -.05em;
     text-align: center;
     text-transform: uppercase;
+    transition: color .22s ease;
+  }
+
+  /* Las opciones aparecen una a una, de abajo hacia arriba. */
+  .menu-movil[open] nav a {
+    animation: mostrar-opcion .55s ease-out both;
+  }
+
+  .menu-movil[open] nav a:nth-child(1) { animation-delay: .06s; }
+  .menu-movil[open] nav a:nth-child(2) { animation-delay: .12s; }
+  .menu-movil[open] nav a:nth-child(3) { animation-delay: .18s; }
+  .menu-movil[open] nav a:nth-child(4) { animation-delay: .24s; }
+  .menu-movil[open] nav a:nth-child(5) { animation-delay: .30s; }
+
+  .menu-movil nav a:hover,
+  .menu-movil nav a:focus-visible,
+  .menu-movil nav a:active {
+    color: var(--papel);
+  }
+
+  .menu-movil summary {
+    transition: opacity .2s ease;
+  }
+
+  .menu-movil summary:hover {
+    opacity: .65;
   }
 
   /* En este menú grande no hace falta subrayado. */
@@ -1693,6 +1720,23 @@ em {
 
   body:has(.menu-movil[open]) .cabecera .marca {
     visibility: hidden;
+  }
+}
+
+/* Animaciones del menú móvil: solo opacidad y desplazamiento. */
+@keyframes abrir-menu {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes mostrar-opcion {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
