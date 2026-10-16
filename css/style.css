@@ -1,3 +1,6 @@
+/* Switzer Light (300) desde Fontshare; los demás pesos son locales. */
+@import url('https://api.fontshare.com/v2/css?f[]=switzer@300&display=swap');
+
 /* MARGEN — estilos compartidos de toda la revista.
    1. Fuentes y base / 2. Navegación / 3. Home / 4. Interiores / 5. Responsive */
 
@@ -66,7 +69,7 @@ body {
   margin: 0;
   background: var(--papel);
   color: var(--texto-suave);
-  font-weight: 400;
+  font-weight: 300;
   font-family: 'Switzer', Arial, sans-serif;
   font-size: 17px;
   line-height: 1.4;
@@ -77,9 +80,22 @@ h1, h2, h3, p, figure, blockquote {
   margin: 0;
 }
 
+/* Todos los títulos usan Switzer Regular, mayúsculas y -5 % de tracking. */
 h1, h2, h3 {
-  font-weight: 500;
+  font-family: 'Switzer', Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -.05em;
+  text-transform: uppercase;
   line-height: .98;
+}
+
+/* Textos de lectura, pies y notas: Switzer Light, minúsculas y tracking 0. */
+p, li, figcaption, blockquote {
+  font-family: 'Switzer', Arial, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0;
+  text-transform: lowercase;
 }
 
 h2 {
@@ -131,13 +147,24 @@ img {
   padding: 76px var(--margen);
 }
 
-.etiqueta, .enlace, .boton, nav, .marca {
+.enlace, .boton, nav, .marca {
   text-transform: uppercase;
 }
 
 .etiqueta {
+  font-family: 'Switzer', Arial, sans-serif;
   font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0;
+  text-transform: lowercase;
   color: var(--texto-suave);
+}
+
+/* Si una etiqueta es un título, conserva las mayúsculas de los títulos. */
+h1.etiqueta, h2.etiqueta, h3.etiqueta {
+  font-weight: 400;
+  letter-spacing: -.05em;
+  text-transform: uppercase;
 }
 
 /* Sobre rojo se conserva el granate para mantener un buen contraste. */
@@ -227,8 +254,10 @@ body > .cabecera + main {
 }
 
 .marca {
-  font-size: 18px;
+  font-family: 'Switzer', Arial, sans-serif;
+  font-size: 13px;
   font-weight: 400;
+  letter-spacing: 0;
 }
 
 nav {
@@ -312,7 +341,8 @@ nav a[aria-current='page'] {
   font-size: clamp(24px, 2.5vw, 42px);
   font-weight: 400;
   line-height: 1.03;
-  letter-spacing: -.025em;
+  letter-spacing: -.05em;
+  text-transform: uppercase;
   text-align: right;
 }
 
@@ -335,7 +365,7 @@ nav a[aria-current='page'] {
   margin-top: 52px;
   font-size: clamp(43px, 4.8vw, 82px);
   line-height: .99;
-  letter-spacing: -.035em;
+  letter-spacing: -.05em;
   color: var(--tinta);
 }
 
@@ -375,7 +405,7 @@ nav a[aria-current='page'] {
   border-top: 1px solid var(--granate);
   text-transform: uppercase;
   line-height: .98;
-  letter-spacing: -.025em;
+  letter-spacing: -.05em;
 }
 
 .subtitulo {
@@ -451,8 +481,8 @@ img[src$='objetos.jpg'] {
   color: var(--tinta);
   font-size: clamp(28px, 2.4vw, 38px);
   line-height: 1.07;
-  letter-spacing: -.025em;
-  text-transform: none;
+  letter-spacing: -.05em;
+  text-transform: uppercase;
 }
 
 .tarjeta > p:not(.etiqueta) {
@@ -514,7 +544,10 @@ img[src$='objetos.jpg'] {
 }
 
 .nombre-categoria {
+  font-family: 'Switzer', Arial, sans-serif;
   font-size: clamp(48px, 5.76vw, 100px);
+  font-weight: 400;
+  letter-spacing: -.05em;
   text-transform: uppercase;
   transition: transform .3s ease;
 }
@@ -542,6 +575,13 @@ img[src$='objetos.jpg'] {
   color: var(--rojo);
   font-size: clamp(30px, 3.4vw, 60px);
   font-weight: 400;
+  letter-spacing: -.05em;
+  text-transform: uppercase;
+}
+
+.cita p {
+  font-weight: 400;
+  letter-spacing: inherit;
   text-transform: uppercase;
 }
 
@@ -617,22 +657,21 @@ img[src$='objetos.jpg'] {
   margin: 0;
   font-size: clamp(65px, 7.1vw, 125px);
   line-height: .93;
-  letter-spacing: -.04em;
+  letter-spacing: -.05em;
 }
 
 em {
   font-weight: 400;
 }
 
-/* «Fuera» utiliza ITC Legacy Sans Std Medium Italic.
-   Para verlo en todos los dispositivos hace falta añadir la fuente web con licencia. */
+/* La palabra «Fuera» mantiene su tamaño especial, ahora en Switzer Regular. */
 .manifiesto h2 em,
 .cabecera-seccion h1 em {
-  font-family: 'ITC Legacy Sans Std', 'ITC Legacy Sans', 'Switzer', Arial, sans-serif;
+  font-family: 'Switzer', Arial, sans-serif;
   font-size: 133px;
-  font-weight: 500;
-  font-style: italic;
-  letter-spacing: -0.05em;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -.05em;
   line-height: .9;
 }
 
@@ -760,7 +799,7 @@ em {
   color: var(--granate);
   font-size: clamp(52px, 6.6vw, 108px);
   line-height: .93;
-  letter-spacing: -.04em;
+  letter-spacing: -.05em;
   overflow-wrap: break-word;
 }
 
@@ -870,7 +909,7 @@ em {
   color: var(--granate);
   font-size: 72px;
   line-height: .76;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .lectura-articulo > section {
@@ -902,7 +941,7 @@ em {
   color: var(--tinta);
   font-size: clamp(28px, 2.7vw, 35px);
   line-height: 1.13;
-  letter-spacing: -.025em;
+  letter-spacing: -.05em;
 }
 
 .lectura-articulo p {
@@ -955,7 +994,8 @@ em {
   color: var(--texto-suave);
   font-size: 11px;
   line-height: 1.5;
-  text-transform: uppercase;
+  text-transform: lowercase;
+  letter-spacing: 0;
   flex-wrap: wrap;
 }
 
@@ -1009,7 +1049,7 @@ em {
   margin-bottom: 44px;
   font-size: clamp(48px, 5.3vw, 88px);
   line-height: 1;
-  letter-spacing: -.035em;
+  letter-spacing: -.05em;
 }
 
 .sobre-grid p:not(.etiqueta) {
@@ -1030,7 +1070,7 @@ em {
   margin-bottom: 75px;
   color: var(--rojo);
   font-size: clamp(54px, 6.6vw, 110px);
-  letter-spacing: -.035em;
+  letter-spacing: -.05em;
 }
 
 .principios .rejilla {
