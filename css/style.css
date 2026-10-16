@@ -442,7 +442,6 @@ img[src$='objetos.jpg'] {
   padding-block: 28px;
   border-top: 1px solid var(--linea);
   color: var(--granate);
-  transition: color .25s ease, padding .25s ease, background-color .25s ease;
 }
 
 .fila-categoria .etiqueta {
@@ -453,25 +452,18 @@ img[src$='objetos.jpg'] {
 .nombre-categoria {
   font-size: clamp(48px, 5.76vw, 100px);
   text-transform: uppercase;
+  transition: transform .3s ease;
 }
 
 .flecha {
   font-size: 38px;
   text-align: right;
-  transition: transform .25s ease;
 }
 
-/* El rojo del hover llega hasta los bordes, sin mover el contenido. */
-.fila-categoria:hover {
-  padding-left: 12px;
-  background: var(--rojo);
-  color: var(--granate);
-  box-shadow: var(--margen) 0 0 var(--rojo),
-              calc(-1 * var(--margen)) 0 0 var(--rojo);
-}
-
-.fila-categoria:hover .flecha {
-  transform: translate(5px, -5px);
+/* Solo se desplaza el nombre de la categoría; la fila no cambia de fondo. */
+.fila-categoria:hover .nombre-categoria,
+.fila-categoria:focus-visible .nombre-categoria {
+  transform: translateX(12px);
 }
 
 .cita {
