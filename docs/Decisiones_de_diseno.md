@@ -14,7 +14,7 @@ La home facilitada en Figma define la dirección visual: una portada roja, el r�
 
 ### Color y tipografía
 
-La paleta procede de la home: rojo #FD3738, granate #570000, fondo cálido #DBD5CE y texto #292423. Switzer sustituye a Inter en todo el texto HTML, con interlineado del 90% y espaciado entre letras de -5%. Los rótulos MARGEN y EXPLORA conservan sus vectores originales.
+La paleta procede de la home: rojo #ff5a5b, granate #570000, fondo cálido #DBD5CE y texto #292423. Switzer sustituye a Inter en todo el texto HTML, con interlineado del 90% y espaciado entre letras de -5%. Los rótulos MARGEN y EXPLORA conservan sus vectores originales.
 
 ### Imagen y tono
 
