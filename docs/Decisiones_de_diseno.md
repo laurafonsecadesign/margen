@@ -1,64 +1,77 @@
 # MARGEN. — Decisiones de diseño
 
-Laura Fonseca · Proyecto académico HTML y CSS · Octubre 2026
+**Laura Fonseca · Proyecto universitario de HTML y CSS · Octubre de 2026**
 
-## 01 / CONCEPTO E IDENTIDAD
+## 01 / Concepto de la revista
 
-### Una revista para mirar dos veces
+### Una invitación a mirar otra vez
 
-MARGEN es una revista digital en español sobre diseño, arte y cultura visual. Está pensada para estudiantes y personas interesadas en la creatividad. El nombre conecta los márgenes de una página con la idea de observar aquello que suele quedar fuera del foco.
+MARGEN es una revista digital sobre diseño, arte y cultura visual. La idea es hablar de elementos que vemos todos los días, pero a los que muchas veces no prestamos demasiada atención: una letra, un cartel, un objeto o una composición. El nombre hace referencia a lo que queda alrededor de una página y, al mismo tiempo, a las cosas que suelen pasar desapercibidas.
 
-### De Figma a la web
+Quería que tuviera una personalidad editorial, parecida a la de una revista impresa, sin dejar de ser una web fácil de recorrer.
 
-La home facilitada en Figma define la dirección visual: una portada roja, el rótulo MARGEN a gran escala, un artículo destacado, tarjetas, categorías, una cita y un manifiesto. Se mantiene ese orden. La etiqueta técnica del wireframe no forma parte de la web.
+### A quién va dirigida
 
-### Color y tipografía
+Está pensada principalmente para estudiantes, personas creativas y lectores con interés por la cultura visual. Por eso los textos son cercanos y no dan por hecho que todo el mundo conozca vocabulario técnico de diseño. La navegación permite entrar por tres categorías y descubrir artículos completos a partir de ellas.
 
-La paleta procede de la home: rojo #ff5a5b, granate #570000, fondo cálido #DBD5CE y texto #292423. Switzer sustituye a Inter en todo el texto HTML, con interlineado del 90% y espaciado entre letras de -5%. Los rótulos MARGEN y EXPLORA conservan sus vectores originales.
+## 02 / Identidad visual
 
-### Imagen y tono
+### Colores y tipografía
 
-Se combinan fotografías de arte urbano, arquitectura y cerámica con composiciones gráficas editoriales. Los textos son cercanos y reflexivos, sin presentarse como noticias o entrevistas. Los créditos distinguen las fotografías de los gráficos preparados para el proyecto.
+La identidad se construye con una paleta reducida. El color principal es el rojo **#FF5A5B**, acompañado del granate **#570000**. Para las zonas de lectura se utiliza el tono papel **#E8E3DC**. Los textos y detalles secundarios usan **#292423**, **#57514E** y **#B8AFA7**. Los mismos colores se repiten en las páginas interiores para mantener una relación con la portada.
 
-## 02 / ESTRUCTURA Y EXPERIENCIA
+La tipografía principal es **Switzer**. Los titulares llevan Switzer Regular, normalmente en mayúsculas, con un interletrado de -5 %. Los párrafos y la información más pequeña usan Switzer Light, con un espaciado más natural para leer cómodamente. El rótulo MARGEN se utiliza también como un SVG para conservar la forma del diseño original.
 
-### Arquitectura de contenidos
+La palabra **Fuera** en el manifiesto de la home tiene un tratamiento distinto. La fuente preferida es ITC Legacy Sans Std Medium Italic, pero no se incluye su archivo comercial en el proyecto. Si el navegador no la tiene, se usa una versión local de Switzer Italic como alternativa. Además, el peso Light de Switzer se carga desde Fontshare, así que para reproducirlo exactamente es necesaria una conexión a Internet.
 
-La revista tiene 13 páginas: Inicio, Diseño, Arte, Cultura, About, Créditos y siete artículos. Cada categoría reúne sus contenidos. Todas las tarjetas enlazan a artículos completos; el principal, «Cuando el diseño deja de ser perfecto», tiene 443 palabras.
+### Composición e imágenes
 
-### Un sistema compartido
+Tomé como punto de partida el diseño de la home en Figma. Mantuve la portada roja, el logotipo a gran escala y la combinación de titulares grandes con bloques de texto más tranquilos. En las páginas interiores cambié algunas distribuciones, pero conservé los márgenes, las líneas divisorias, los colores y la jerarquía.
 
-Todas las páginas repiten cabecera, navegación, colores, tipografía y pie. Las categorías utilizan títulos grandes y una cuadrícula de tarjetas. Los artículos tienen titular, entradilla, imagen, crédito, texto por apartados y lecturas relacionadas. About desarrolla el manifiesto de la home.
+La revista utiliza fotografías para algunas historias y gráficos SVG para otras. Las ilustraciones acompañan el tema de cada artículo, no son solo decoración. Las fuentes de las fotos y de la tipografía están recogidas en **creditos.html**.
 
-### Distribución responsive
+## 03 / Estructura de la web
 
-CSS Grid organiza las tarjetas y el destacado; Flexbox distribuye la navegación y otros elementos. En pantallas grandes hay tres columnas. A 1000 px se reducen márgenes y espacios. A 700 px la composición pasa a una columna y el menú queda visible, sin depender de JavaScript.
+### Trece páginas conectadas
 
-### Semántica y accesibilidad
+El proyecto tiene una home, tres categorías (Diseño, Arte y Cultura), las páginas About y Créditos y siete artículos. Cada categoría reúne sus publicaciones. Desde las tarjetas se puede abrir el artículo completo y desde los artículos se puede volver a la sección correspondiente o seguir leyendo.
 
-Se utilizan header, nav, main, section, article y footer. Cada página tiene un H1 y una jerarquía de subtítulos. Las imágenes llevan texto alternativo; el documento declara lang="es". Se incluyen foco visible, un enlace para saltar al contenido y soporte para movimiento reducido.
+La home funciona como portada de la revista. Presenta el artículo destacado, las últimas publicaciones, el acceso a categorías y un pequeño manifiesto. En los artículos he priorizado una columna de lectura con títulos, entradillas, imágenes y subtítulos.
 
-## 03 / DESARROLLO Y ENTREGA
+### Retícula y responsive
 
-### HTML y CSS sencillos
+He utilizado **CSS Grid** para las tarjetas y otros bloques de varias columnas, y **Flexbox** para la navegación y los elementos que necesitan alinearse en una fila. La hoja de estilos tiene media queries para adaptar tamaños y distribución.
 
-La web es estática y no necesita frameworks, JavaScript ni instalación. Los HTML son independientes y comparten css/style.css, dividida en bloques comentados. Se emplean clases descriptivas como cabecera, tarjeta, destacado y lectura para facilitar la edición.
+En escritorio las composiciones dejan más espacio a las imágenes y los titulares. En móvil el contenido se ordena verticalmente y la navegación pasa a un menú a pantalla completa. Este menú funciona con un checkbox de HTML y transiciones CSS. Los enlaces aparecen de forma escalonada al abrirlo, sin necesitar JavaScript.
 
-### Recursos locales
+### Interacciones
 
-Las imágenes y Switzer se guardan en assets. Las rutas son relativas, de modo que el proyecto puede abrirse desde index.html al descomprimirlo. Se usan SVG para los rótulos y composiciones, JPG para las fotografías y WOFF2 para las fuentes. Se adjunta la licencia oficial de Switzer.
+Los enlaces tienen estados hover y de foco para indicar que se pueden pulsar. Hay algunas animaciones suaves de entrada y una frase en movimiento en la home. El CSS incluye una opción para reducir estas animaciones cuando el usuario tiene activada la preferencia de movimiento reducido.
 
-### Interacción y navegación
+## 04 / Desarrollo
 
-Los controles son enlaces con destinos reales. Hay acceso a las categorías desde el menú y desde EXPLORA, retorno desde los artículos y un enlace para subir al inicio. Los estados hover ofrecen respuesta visual; el sitio mantiene su funcionamiento sin animación.
+### HTML y CSS
 
-### Referencias y revisión
+He organizado el contenido en archivos HTML separados y he utilizado una sola hoja **css/style.css** para los estilos comunes. El CSS está dividido por secciones comentadas: fuentes y base, navegación, home, páginas interiores, responsive y animaciones.
 
-El diseño de referencia es la home de Figma proporcionada para MARGEN. Switzer procede de Fontshare; las fotografías, de Unsplash, con fuentes enlazadas en Créditos. Se han verificado las 354 referencias locales, la jerarquía principal y los recursos. Queda pendiente la revisión visual en navegador antes de la entrega.
+He usado etiquetas como **header**, **nav**, **main**, **section**, **article** y **footer** para separar el contenido de manera clara. Todas las páginas tienen un H1 principal, una descripción y un enlace para saltar al contenido. Las imágenes HTML llevan texto alternativo.
 
-## Fuentes
+No he utilizado frameworks ni JavaScript. El proyecto se puede abrir desde **index.html** después de descomprimir la carpeta, aunque algunos recursos tipográficos dependen de Internet.
 
-- Home: https://www.figma.com/design/auIdICJ4fPgWbjJy12P4h6/Untitled?node-id=8-3
-- Tipografía: https://www.fontshare.com/fonts/switzer
-- Fotografía y licencia: https://unsplash.com/license
-- Fuentes individuales: página creditos.html de la web.
+### Archivos y recursos
+
+Las fotografías y los SVG están en **assets/images/**. Los archivos locales de Switzer y su licencia se encuentran en **assets/fonts/**. Las rutas son relativas, por lo que la estructura funciona al mover la carpeta completa a otro ordenador.
+
+## 05 / Revisión de la entrega
+
+He comprobado las trece páginas HTML: todas contienen un elemento main y un H1, no tienen imágenes HTML sin atributo alt y sus rutas internas apuntan a archivos existentes. También he comprobado los enlaces con anclas y las referencias locales desde el CSS.
+
+La comprobación automática de archivos no sustituye a la revisión visual. Antes de la entrega final conviene abrir la web en el navegador, probarla en un ancho de escritorio y otro de móvil, abrir y cerrar el menú y comprobar los textos y las imágenes.
+
+## Referencias
+
+- **Diseño original en Figma:** https://www.figma.com/design/auIdICJ4fPgWbjJy12P4h6/Untitled?node-id=8-3
+- **Switzer / Fontshare:** https://www.fontshare.com/fonts/switzer
+- **Licencia de fotografías Unsplash:** https://unsplash.com/license
+- **Créditos de imágenes y tipografía:** creditos.html
+- **Web publicada:** https://laurafonsecadesign.github.io/margen/
