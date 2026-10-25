@@ -1,62 +1,81 @@
-MARGEN. — REVISTA DIGITAL
-Proyecto académico de HTML y CSS
+MARGEN. — Revista digital de diseño, arte y cultura visual
+Proyecto universitario · HTML y CSS · 2026
 
-CÓMO ABRIR LA WEB
-1. Descomprime toda la carpeta.
-2. Abre index.html en Chrome, Safari, Firefox o Edge.
-3. No hace falta instalar nada. Las imágenes y las fuentes son locales.
+1. CÓMO VER LA WEB
 
-CÓMO ESTÁ ORGANIZADA
-- index.html: home basada en el diseño de Figma.
-- diseno.html, arte.html y cultura.html: categorías.
-- about.html: información y manifiesto de la revista.
-- creditos.html: fuentes de imágenes, tipografía y recursos.
-- Los otros siete HTML: artículos completos.
-- css/style.css: todos los estilos, ordenados y comentados por secciones.
-- assets/images/: fotografías y gráficos de la revista.
-- assets/fonts/: Switzer y su licencia original FFL.txt.
-- docs/Decisiones_de_diseno.pdf: documento para acompañar la entrega.
-- docs/Decisiones_de_diseno.md: el mismo contenido en texto editable.
+Descomprime el ZIP y abre index.html en el navegador.
+No necesitas instalar programas ni ejecutar comandos: es una web estática.
+Para verla publicada: https://laurafonsecadesign.github.io/margen/
 
-CAMBIOS SENCILLOS
-Para modificar un texto, abre su HTML en VS Code y busca la frase.
-Para cambiar una foto, reemplaza el archivo correspondiente en assets/images/
-y actualiza su descripción alt si cambia el contenido de la imagen.
-Para cambiar los colores, ve a :root al principio de css/style.css.
-Para cambiar un margen, busca --margen en la misma hoja de estilos.
-Para cambiar la tipografía, busca los bloques @font-face y la regla body.
-Para modificar la versión móvil, ve al bloque @media (max-width: 700px).
+IMPORTANTE: las imágenes y la mayoría de las fuentes se incluyen en la carpeta.
+El peso Light (300) de Switzer se carga desde Fontshare, por lo que para
+verlo exactamente igual hace falta conexión a Internet. Sin conexión, el
+navegador mostrará una alternativa legible.
 
-POR QUÉ NO HAY SCRIPT.JS
-La web funciona con HTML y CSS. Los botones de lectura son enlaces reales.
-La navegación móvil permanece visible. No necesita un menú programado,
-una instalación, una base de datos ni herramientas de compilación.
+2. CÓMO ESTÁ ORGANIZADO EL PROYECTO
 
-QUÉ CÓDIGO CONVIENE ENTENDER
-HTML organiza los contenidos. CSS controla su aspecto.
-Grid distribuye las columnas; Flexbox alinea y reparte elementos.
-Las media queries cambian la distribución según el ancho de la pantalla.
-Las rutas son relativas, para poder mover la carpeta sin romper los enlaces.
-Los bloques comunes de cabecera y pie se repiten en los HTML a propósito:
-es una web estática pequeña y se pueden editar sin aprender plantillas.
+index.html                         Página de inicio
+diseno.html / arte.html /
+cultura.html                       Las tres categorías
+about.html                         Concepto y manifiesto
+creditos.html                      Créditos y fuentes utilizadas
+Los siete HTML restantes           Artículos completos
+css/style.css                      Todos los estilos y el responsive
+assets/images/                     Fotografías, logotipos e ilustraciones SVG
+assets/fonts/                      Archivos locales de Switzer y licencia
+docs/Decisiones_de_diseno.md       Explicación de las decisiones del proyecto
+docs/Decisiones_de_diseno.pdf      Versión en PDF de esa explicación
 
-TIPOGRAFÍA
-Switzer está configurada con line-height: 0.9 y letter-spacing: -0.05em.
-El 90% y el -5% se han aplicado al texto HTML según la indicación del diseño.
-Los rótulos vectoriales MARGEN y EXPLORA conservan su dibujo original.
-Las ilustraciones tipográficas son imágenes y tienen su propia composición.
-La fuente se incluye para su uso en esta web; consulta assets/fonts/FFL.txt.
+3. DECISIONES DEL CÓDIGO
 
-COMPROBACIÓN REALIZADA
-Se han comprobado las 13 páginas, sus 354 referencias locales, los destinos
-con ancla, las imágenes, los recursos del CSS y los caracteres españoles de
-Switzer. Todas las páginas tienen un H1, idioma es y textos alternativos.
-La revisión visual en un navegador no estaba disponible en el entorno de
-preparación. Antes de entregar, abre la web y comprueba escritorio y móvil.
+He utilizado HTML para organizar cada página y CSS para el diseño.
+No hay JavaScript ni frameworks. Los archivos HTML son independientes y
+comparten una única hoja de estilos para que los cambios sean consistentes.
 
-PRUEBA FINAL QUE PUEDES HACER
-- Abre index.html y entra en cada categoría y artículo.
-- Reduce el ancho de la ventana y comprueba que no se corta ningún texto.
-- Recorre los enlaces con Tab: el foco debe verse.
-- Usa los enlaces «Volver» y «Arriba».
-- Revisa los textos y adapta lo que quieras a tu propia voz.
+En el HTML aparecen etiquetas semánticas (header, nav, main, section,
+article y footer) y nombres de clases descriptivos como "cabecera",
+"tarjeta", "destacado" o "lectura".
+
+En CSS utilizo Grid para las tarjetas y las estructuras de columnas, y
+Flexbox para la navegación y algunos bloques. Las media queries adaptan
+la revista a tablet y móvil. El menú móvil usa un checkbox de HTML y
+transiciones CSS, así que no necesita JavaScript para abrirse o cerrarse.
+
+4. CÓMO HACER CAMBIOS
+
+- Textos: busca la frase en el archivo HTML correspondiente.
+- Colores: cambia las variables que están al principio de css/style.css.
+  El rojo actual es #FF5A5B y el granate es #570000.
+- Espaciados: ajusta la variable --margen o las reglas de cada sección.
+- Tipografías: están definidas en los bloques @font-face y en el body.
+- Móvil: busca las reglas @media (max-width: 700px).
+- Fotografías o gráficos: reemplaza el archivo de assets/images/ y revisa
+  su descripción alternativa (alt).
+
+5. TIPOGRAFÍA Y RECURSOS
+
+Los títulos usan Switzer Regular, en mayúsculas y con letras juntas.
+Los párrafos y textos secundarios usan Switzer Light.
+El texto "Fuera" del manifiesto de la home tiene una excepción tipográfica:
+la opción preferida es ITC Legacy Sans Std Medium Italic. Como esa fuente
+comercial no se distribuye en el ZIP, se muestra una cursiva local de
+Switzer cuando no está instalada. Consulta creditos.html.
+
+Las fotografías están acreditadas en la página Créditos. También se
+incluyen los SVG originales que se utilizan en la revista.
+
+6. COMPROBACIONES DE ENTREGA
+
+- 13 páginas HTML con un H1 y un elemento main en cada una.
+- Enlaces entre las páginas, anclas y recursos locales comprobados.
+- Imágenes HTML con descripciones alt y rutas relativas.
+- Los iconos de navegación se dibujan en SVG, no como emojis.
+- CSS organizado por secciones: base, navegación, home, artículos,
+  tablet/móvil y animaciones.
+
+Antes de entregar, recomiendo abrir index.html y comprobar la home,
+las categorías y algún artículo en escritorio y móvil. También conviene
+probar el menú móvil y revisar que las fuentes carguen correctamente.
+
+Este ZIP incluye el código fuente y los recursos necesarios para
+revisar cómo está construida MARGEN.
